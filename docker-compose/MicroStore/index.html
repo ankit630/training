@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MicroStore Services Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .service {
+            background-color: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .service h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏪 MicroStore Services</h1>
+            <p>E-commerce Microservices Demo</p>
+        </div>
+        <div class="service">
+            <h3>👥 User Service</h3>
+            <p>Handles user authentication and profiles</p>
+            <p>Port: 5001</p>
+            <p>URL: <span class="serviceUrl" data-port="5001"></span></p>
+        </div>
+        <div class="service">
+            <h3>📦 Product Service</h3>
+            <p>Manages product catalog and inventory</p>
+            <p>Port: 5002</p>
+            <p>URL: <span class="serviceUrl" data-port="5002"></span></p>
+        </div>
+        <div class="service">
+            <h3>🛍️ Order Service</h3>
+            <p>Handles order processing and tracking</p>
+            <p>Port: 5003</p>
+            <p>URL: <span class="serviceUrl" data-port="5003"></span></p>
+        </div>
+        <div class="service">
+            <h3>💳 Payment Service</h3>
+            <p>Processes payments and transactions</p>
+            <p>Port: 5004</p>
+            <p>URL: <span class="serviceUrl" data-port="5004"></span></p>
+        </div>
+    </div>
+    <script>
+        // Get the server's IP address from the current URL
+        const serverIP = window.location.hostname;
+        
+        // Update all service URLs
+        document.querySelectorAll('.serviceUrl').forEach(span => {
+            const port = span.getAttribute('data-port');
+            const url = `http://${serverIP}:${port}`;
+            span.innerHTML = `<a href="${url}" class="link" target="_blank">${url}</a>`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+version: '3'
+services:
+  user-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "0.0.0.0:5001:5001"
+    command: python service.py
+    environment:
+      - FLASK_APP=service.py
+    volumes:
+      - ./user_service.py:/app/service.py
+
+  product-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "0.0.0.0:5002:5002"
+    command: python service.py
+    environment:
+      - FLASK_APP=service.py
+    volumes:
+      - ./product_service.py:/app/service.py
+
+  order-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "0.0.0.0:5003:5003"
+    command: python service.py
+    environment:
+      - FLASK_APP=service.py
+    volumes:
+      - ./order_service.py:/app/service.py
+
+  payment-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "0.0.0.0:5004:5004"
+    command: python service.py
+    environment:
+      - FLASK_APP=service.py
+    volumes:
+      - ./payment_service.py:/app/service.py
