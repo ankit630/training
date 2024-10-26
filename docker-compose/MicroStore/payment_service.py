@@ -17,7 +17,7 @@ def payment_service():
             <h1>💳 MicroStore Payment Service</h1>
             <div class="status">
                 <h2>Status: Online</h2>
-                <p>Port: 5004</p>
+                <p>Port: 8004</p>
                 <p>Service: Processes payments and transactions</p>
                 <p>Access this service via: <span id="url"></span></p>
             </div>
@@ -29,4 +29,4 @@ def payment_service():
     '''
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5004, debug=False)
+    app.run(host='0.0.0.0', port=8004, debug=False)
