@@ -5,10 +5,11 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "0.0.0.0:5001:5001"
+      - "5001:5001"
     command: python service.py
     environment:
       - FLASK_APP=service.py
+      - FLASK_RUN_HOST=0.0.0.0
     volumes:
       - ./user_service.py:/app/service.py
 
@@ -17,10 +18,11 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "0.0.0.0:5002:5002"
+      - "5002:5002"
     command: python service.py
     environment:
       - FLASK_APP=service.py
+      - FLASK_RUN_HOST=0.0.0.0
     volumes:
       - ./product_service.py:/app/service.py
 
@@ -29,10 +31,11 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "0.0.0.0:5003:5003"
+      - "5003:5003"
     command: python service.py
     environment:
       - FLASK_APP=service.py
+      - FLASK_RUN_HOST=0.0.0.0
     volumes:
       - ./order_service.py:/app/service.py
 
@@ -41,9 +44,10 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "0.0.0.0:5004:5004"
+      - "5004:5004"
     command: python service.py
     environment:
       - FLASK_APP=service.py
+      - FLASK_RUN_HOST=0.0.0.0
     volumes:
       - ./payment_service.py:/app/service.py
