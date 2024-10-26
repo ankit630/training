@@ -17,7 +17,7 @@ def order_service():
             <h1>🛍️ MicroStore Order Service</h1>
             <div class="status">
                 <h2>Status: Online</h2>
-                <p>Port: 5003</p>
+                <p>Port: 8003</p>
                 <p>Service: Handles order processing and tracking</p>
                 <p>Access this service via: <span id="url"></span></p>
             </div>
@@ -29,4 +29,4 @@ def order_service():
     '''
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5003, debug=False)
+    app.run(host='0.0.0.0', port=8003, debug=False)
