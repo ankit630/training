@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5001:5001"
+      - "8001:8001"
     command: python service.py
     environment:
       - FLASK_APP=service.py
@@ -18,7 +18,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5002:5002"
+      - "8002:8002"
     command: python service.py
     environment:
       - FLASK_APP=service.py
@@ -31,7 +31,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5003:5003"
+      - "8003:8003"
     command: python service.py
     environment:
       - FLASK_APP=service.py
@@ -44,7 +44,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5004:5004"
+      - "8004:8004"
     command: python service.py
     environment:
       - FLASK_APP=service.py
