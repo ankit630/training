@@ -17,7 +17,7 @@ def product_service():
             <h1>📦 MicroStore Product Service</h1>
             <div class="status">
                 <h2>Status: Online</h2>
-                <p>Port: 5002</p>
+                <p>Port: 8002</p>
                 <p>Service: Manages product catalog and inventory</p>
                 <p>Access this service via: <span id="url"></span></p>
             </div>
@@ -29,4 +29,4 @@ def product_service():
     '''
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5002, debug=False)
+    app.run(host='0.0.0.0', port=8002, debug=False)
