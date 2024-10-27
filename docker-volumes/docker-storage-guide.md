@@ -54,11 +54,13 @@ graph TD
     class D daemon
 ```
 **Container** --> Docker Volume: Shows that the container uses the Docker volume for storage
+
 **Docker Volume** --> Docker Storage: Indicates that the volume data is physically stored in Docker's storage area
+
 **Docker Daemon** --> Docker Volume: Shows that the Docker daemon manages and controls the volume
 
 
-Flow of Operations:
+**Flow of Operations:**
 
 When a container needs to store data:
 
