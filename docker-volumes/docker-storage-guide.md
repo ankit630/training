@@ -53,6 +53,31 @@ graph TD
     class C storage
     class D daemon
 ```
+Explanation for each component of this diagram:
+
+Components:
+
+A[Container]: This represents a Docker container, which is your running application
+B[Docker Volume]: This is the Docker volume, colored in pink (#f9f)
+C[(Docker Storage)]: This represents the physical storage location (/var/lib/docker/volumes/), colored in light green (#dfd)
+D[Docker Daemon]: This is the Docker engine/service that manages everything, colored in light yellow (#ffd)
+
+
+Relationships (Arrows):
+
+Container --> Docker Volume: Shows that the container uses the Docker volume for storage
+Docker Volume --> Docker Storage: Indicates that the volume data is physically stored in Docker's storage area
+Docker Daemon --> Docker Volume: Shows that the Docker daemon manages and controls the volume
+
+
+Flow of Operations:
+
+When a container needs to store data:
+
+The container writes to its mounted volume path
+The Docker volume system handles this write operation
+The data is physically stored in Docker's storage area
+All of this is managed by the Docker daemon
 
 **Key Characteristics:**
 - Managed by Docker daemon
