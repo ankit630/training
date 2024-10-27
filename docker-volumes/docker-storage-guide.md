@@ -42,11 +42,16 @@ graph TD
 ```mermaid
 graph TD
     A[Container] --> B[Docker Volume]
-    B --> C[/var/lib/docker/volumes]
+    B --> C[(Docker Storage)]
     D[Docker Daemon] --> B
-    style B fill:#f9f,stroke:#333,stroke-width:2px
-    style C fill:#dfd,stroke:#333,stroke-width:2px
-    style D fill:#ffd,stroke:#333,stroke-width:2px
+    
+    classDef volume fill:#f9f,stroke:#333,stroke-width:2px
+    classDef storage fill:#dfd,stroke:#333,stroke-width:2px
+    classDef daemon fill:#ffd,stroke:#333,stroke-width:2px
+    
+    class B volume
+    class C storage
+    class D daemon
 ```
 
 **Key Characteristics:**
