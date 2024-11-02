@@ -114,10 +114,11 @@ Set up required kernel parameters:
 ### 2. Add Kubernetes Repository
 
     # Add GPG key
-    curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/kubernetes-xenial.gpg
+    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 
     # Add Kubernetes repository
-    sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+    apt install software-properties-common -y
+    echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
 ### 3. Install Kubernetes Tools
 
@@ -125,7 +126,7 @@ Set up required kernel parameters:
     apt-get update
 
     # Install specific versions of kubernetes components
-    apt-get install -y kubelet=1.28.2-00 kubeadm=1.28.2-00 kubectl=1.28.2-00
+    apt-get install -y kubelet=1.31.2-1.1 kubeadm=1.31.2-1.1 kubectl=1.31.2-1.1
 
     # Prevent automatic updates
     apt-mark hold kubelet kubeadm kubectl
