@@ -139,7 +139,7 @@ Set up required kernel parameters:
 
 ### 1. Initialize Master Node
 
-    kubeadm init --apiserver-advertise-address=<MASTER_IP> --pod-network-cidr 192.168.0.0/16 --kubernetes-version 1.28.2
+    kubeadm init --apiserver-advertise-address=<MASTER_IP> --pod-network-cidr 192.168.0.0/16 --kubernetes-version 1.31.2
 
 > Note: Replace `<MASTER_IP>` with your master node's IP address.
 
