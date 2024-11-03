@@ -218,145 +218,120 @@ Kubernetes  | v1.28.2
 containerd  | v1.7.12
 Calico      | Latest stable
 
-## Network Ports
+# Network Ports
 
-### Control Plane
+## Control Plane
 
-|
- Protocol 
+Protocol 
 |
  Direction 
 |
- Port Range  
+ Port Range 
 |
- Purpose                    
+ Purpose 
 |
- Used By                   
-|
-|
-----------
+ Used By
+---------
 |
 -----------
 |
--------------
+------------
 |
-----------------------------
+---------
 |
----------------------------
+----------
+TCP 
 |
+ Inbound 
 |
- TCP      
+ 6443 
 |
- Inbound   
+ Kubernetes API server 
 |
- 6443        
+ All
+TCP 
 |
- Kubernetes API server      
+ Inbound 
 |
- All                      
+ 2379-2380 
 |
+ etcd server client API 
 |
- TCP      
+ kube-apiserver, etcd
+TCP 
 |
- Inbound   
+ Inbound 
 |
- 2379-2380   
+ 10250 
 |
- etcd server client API     
+ Kubelet API 
 |
- kube-apiserver, etcd     
+ Self, Control plane
+TCP 
 |
+ Inbound 
 |
- TCP      
+ 10259 
 |
- Inbound   
+ kube-scheduler 
 |
- 10250       
+ Self
+TCP 
 |
- Kubelet API                
+ Inbound 
 |
- Self, Control plane      
+ 10257 
 |
+ kube-controller-manager 
 |
- TCP      
-|
- Inbound   
-|
- 10259       
-|
- kube-scheduler             
-|
- Self                     
-|
-|
- TCP      
-|
- Inbound   
-|
- 10257       
-|
- kube-controller-manager    
-|
- Self                     
-|
+ Self
 
 > Although etcd ports are included in control plane section, you can also host your own etcd cluster externally or on custom ports.
 
-### Worker Node(s)
+## Worker Node(s)
 
-|
- Protocol 
+Protocol 
 |
  Direction 
 |
- Port Range    
+ Port Range 
 |
- Purpose              
+ Purpose 
 |
- Used By                 
-|
-|
-----------
+ Used By
+---------
 |
 -----------
 |
----------------
+------------
 |
-----------------------
+---------
 |
--------------------------
+----------
+TCP 
 |
+ Inbound 
 |
- TCP      
+ 10250 
 |
- Inbound   
+ Kubelet API 
 |
- 10250        
+ Self, Control plane
+TCP 
 |
- Kubelet API          
+ Inbound 
 |
- Self, Control plane    
+ 10256 
 |
+ kube-proxy 
 |
- TCP      
+ Self, Load balancers
+TCP 
 |
- Inbound   
+ Inbound 
 |
- 10256        
+ 30000-32767 
 |
- kube-proxy           
+ NodePort Services† 
 |
- Self, Load balancers   
-|
-|
- TCP      
-|
- Inbound   
-|
- 30000-32767  
-|
- NodePort Services†   
-|
- All                    
-|
-
+ All
