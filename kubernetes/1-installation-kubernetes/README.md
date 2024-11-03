@@ -221,3 +221,7 @@ Calico      | Latest stable
 ## Network Ports
 
 ### Control Plane
+
+![alt text](Firewall-ports-whitelisting-control-plane.png)
+
+![alt text](Firewall-ports-whitelisting-worker-node.png)
