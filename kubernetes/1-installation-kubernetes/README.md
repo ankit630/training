@@ -214,7 +214,7 @@ Current tested versions:
 
 Component    | Version
 ------------|----------
-Kubernetes  | v1.28.2
+Kubernetes  | v1.31.2
 containerd  | v1.7.12
 Calico      | Latest stable
 
