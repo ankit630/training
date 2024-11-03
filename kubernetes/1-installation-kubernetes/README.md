@@ -218,11 +218,12 @@ Kubernetes  | v1.28.2
 containerd  | v1.7.12
 Calico      | Latest stable
 
-# Network Ports
+## Network Ports
 
-## Control Plane
+### Control Plane
 
-Protocol 
+|
+ Protocol 
 |
  Direction 
 |
@@ -230,17 +231,21 @@ Protocol
 |
  Purpose 
 |
- Used By
----------
+ Used By 
+|
+|
+----------
 |
 -----------
 |
 ------------
 |
+----------
+|
 ---------
 |
-----------
-TCP 
+|
+ TCP 
 |
  Inbound 
 |
@@ -248,8 +253,10 @@ TCP
 |
  Kubernetes API server 
 |
- All
-TCP 
+ All 
+|
+|
+ TCP 
 |
  Inbound 
 |
@@ -257,8 +264,10 @@ TCP
 |
  etcd server client API 
 |
- kube-apiserver, etcd
-TCP 
+ kube-apiserver, etcd 
+|
+|
+ TCP 
 |
  Inbound 
 |
@@ -266,8 +275,10 @@ TCP
 |
  Kubelet API 
 |
- Self, Control plane
-TCP 
+ Self, Control plane 
+|
+|
+ TCP 
 |
  Inbound 
 |
@@ -275,8 +286,10 @@ TCP
 |
  kube-scheduler 
 |
- Self
-TCP 
+ Self 
+|
+|
+ TCP 
 |
  Inbound 
 |
@@ -284,13 +297,15 @@ TCP
 |
  kube-controller-manager 
 |
- Self
+ Self 
+|
 
 > Although etcd ports are included in control plane section, you can also host your own etcd cluster externally or on custom ports.
 
-## Worker Node(s)
+### Worker Node(s)
 
-Protocol 
+|
+ Protocol 
 |
  Direction 
 |
@@ -298,17 +313,21 @@ Protocol
 |
  Purpose 
 |
- Used By
----------
+ Used By 
+|
+|
+----------
 |
 -----------
 |
 ------------
 |
+----------
+|
 ---------
 |
-----------
-TCP 
+|
+ TCP 
 |
  Inbound 
 |
@@ -316,8 +335,10 @@ TCP
 |
  Kubelet API 
 |
- Self, Control plane
-TCP 
+ Self, Control plane 
+|
+|
+ TCP 
 |
  Inbound 
 |
@@ -325,8 +346,10 @@ TCP
 |
  kube-proxy 
 |
- Self, Load balancers
-TCP 
+ Self, Load balancers 
+|
+|
+ TCP 
 |
  Inbound 
 |
@@ -334,4 +357,5 @@ TCP
 |
  NodePort Services† 
 |
- All
+ All 
+|
