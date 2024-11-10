@@ -1,8 +1,8 @@
 Kubernetes Dashboard Installation Guide 🚀
 
 A step-by-step guide for installing and configuring the Kubernetes Dashboard with secure access. This guide is regularly maintained and tested with the latest Kubernetes versions.
-
 Table of Contents
+
 Prerequisites
 Quick Start
 Detailed Installation Steps
@@ -146,5 +146,3 @@ Support
 
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-⭐️ If this guide helped you, please consider giving it a star on GitHub!
